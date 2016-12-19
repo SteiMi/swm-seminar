@@ -55,7 +55,7 @@ Würzburg\\
 
 
 \begin{abstract}
-	Hier kommt der Abstract hin. Der Abstract behandelt alle Unterpunkte, welche auch in der Introduction behandelt werden (s. Section~\ref{sub:intro}) und liefert damit eine Zusammenfassung über die Seminararbeit als Ganzes. Im Gegensatz zur Zusammenfassung ist der Abstract sehr kurz gehalten und hat ca. ein bis zwei Sätze pro Unterpunkt.
+	Hier kommt der Abstract hin. Weglassen?
 \end{abstract}
 
 
@@ -74,141 +74,113 @@ auch eine Änderung der Dokumente fordern.
 
 Diese Probleme lassen sich analog auch in der Softwareentwicklung beobachten.
 Es gibt z. B. Probleme durch undokumentierte Änderungen von Code oder
-kurzfristige Änderungen am Quellcode vor
-Auslieferung. Deshalb ist das Konfigurationsmanagement Teil von vielen
-Reifegradmodellen wie z. B. {\em CMMI} oder
-{\em SPICE}~\cite{weischedel2002}.
+kurzfristige Änderungen am Quellcode vor Auslieferung. Deshalb ist das
+Konfigurationsmanagement insbesondere in der
+Automobilbranche Teil von Reifegradmodellen wie z. B. {\em CMMI} oder
+{\em SPICE}. Damit überprüfen Automobilhersteller, ob ihre Zulieferer über ein
+funktionierendes Konfigurationsmanagement verfügen~\cite[S. 2f]{weischedel2002}.
 
-TODO: Aufbau der Arbeit
+Zunächst wird im ersten Kapitel dieser Arbeit auf die Grundlagen des
+Konfigurationsmanagement eingegangen. D. h. das Konfigurationsmanagement wird
+definiert und erklärt.
+Das zweite Kapitel erläutert wie man das allgemeine Konfigurationsmanagement in
+der Softwareentwicklung anwendet.
+In Kapitel drei wird das Konfigurationsmanagement an einem beispielhaften
+Softwareprojekt in der Praxis gezeigt.
 
-\section{Grundlagen}
+TODO: AUFBAU DER ARBEIT VOR ABGABE NOCHMAL ÜBERPRÜFEN OB ES NOCH PASST!!!!
 
-\section{Software}
+\section{Grundlagen des Konfigurationsmanagement}
+Im Folgenden wird Konfigurationsmanagement nach DIN EN ISO 10007 definiert und
+dessen Tätigkeiten beschrieben. Es existieren eine Reihe von weiteren
+Definitionen für Konfigurationsmanagement.
+In dieser Arbeit wird im Folgenden die ISO Definition verwendet. Eine weitere
+Definition ist z. B. im Buch ``Configuration Management Principles and
+Practice'' von Hass beschrieben~\cite{Hass:2003:CMP:582584}. In den nächsten
+Unterkapiteln werden die einzelnen Tätigkeiten des Konfigurationsmanagements
+nach DIN EN ISO 10007 näher erläutert. Daraufhin folgt ein Unterkapitel über
+Konfigurationsmanagementpläne.
 
-\section{Fazit}
+Nach der Norm DIN EN ISO 10007 ist das Konfigurationsmanagement (kurz {\em KM})
+wie folgt definiert:
 
-\subsection{Allgemeiner Aufbau}
+``KM ist eine Managementdisziplin, die über die gesamte Lebensdauer eines
+Erzeugnisses angewandt wird, um Transparenz und Überwachung seiner funktionellen
+und physischen Merkmale sicherzustellen. Hauptziel von KM ist, die
+gegenwärtige Konfiguration eines Erzeugnisses sowie den Stand der Erfüllung
+seiner physischen und funktionellen Forderungen zu dokumentieren und volle
+Transparenz herzustellen. Ein weiteres Ziel ist, dass jeder am Projekt
+Mitwirkende zu jeder Zeit des Erzeugnislebenslaufs die richtige und zutreffende
+Dokumentation verwendet. Der KM Prozess umfasst die folgenden integrierten
+Tätigkeiten:
 
-\textbf{Prinzip der Pyramide}: Der Aufbau eines wissenschaftlichen Papiers (und auch der Seminararbeit) sollte idealerweise dem Prinzip der Pyramide folgen. Das bedeutet, dass der Artikel einen hierarchischen Aufbau verfolgen sollte. Der eigentliche Inhalt des Papiers (Motivation, Inhalt, Ergebnisse) wird in mehreren Iterationen wiedergegeben (z.B. 3), wobei der Abstraktionsgrad bei jeder Iteration sinkt. In hochwertigen Publikationen (z.B. Papieren in IEEE TSE) ist dieses Prinzip deutlich zu erkennen. Dieses Prinzip wird bereits durch Abstract/Introduction induziert und sollte auch im Rest des Papiers weitergeführt werden. Der Vorteil ist, dass es das Verständnis eines komplexen Sachverhalts mit vielen Details wesentlich erleichtert, weil man die Struktur des Vorgestellten besser nachvollziehen kann. Der Leser kann die Details eines Lösungsansatzes besser einordnen, wenn er das Ziel der Argumentation bereits kennt. Auf diese Weise wird auch verhindert, dass ein Papier einen Krimi erzählt, bei dem erst am Schluss klar wird, worauf die Autoren hinaus wollten und was das eigentliche Ergebnis der Arbeit war.
-
-\subsection{Über die Introduction}
-\label{sub:intro}
-
-``Abstract'', ``Introduction'' und ``Conclusions'' gehören zu den meist gelesenen Abschnitten eines Papers und sollten daher mit besonderer Sorgfalt geschrieben werden. Idealerweise enthalten Abstract und Introduction die folgenden 5 Punkte. In einem Abstract sollten zu jedem dieser Punkte ein bis zwei Sätze geschrieben werden, mehr nicht. Die Einleitung behandelt die gleichen Punkte, wie der Abstract, verwendet aber nicht nur ein bis zwei Sätze sondern ein bis zwei Absätze pro Punkt. Die Punkte sind:
-
-\begin{enumerate}
-	\item Eingrenzung des Forschungsbereichs (In welchem Themengebiet ist das Thema/die Arbeit angesiedelt?)
-	\item Beschreibung des Problems, das in den bearbeiteten Arbeiten gelöst werden sollte (Was ist das Problem und warum ist es wichtig dies zu lösen?)
-	\item Lösungsansatz/Lösungsansätze der zu bearbeitenden Arbeiten (Welcher Ansatz wurde in welcher Arbeit verwendet, um das Problem zu lösen? Was ist der Beitrag der jeweiligen Artikel?)
-	\item Art der Validierung + Ergebnisse (Wie wurde nachgewiesen, dass die Arbeiten die versprochene Verbesserung wirklich vollbracht haben (Fallstudie, Experiment, o.ä.); Was waren die Ergebnisse der Validierung (idealerweise Prozentsatz der Verbesserung)?)
-\end{enumerate}
-
- Die Einleitung dient dazu, den Leser an die Arbeit heranzuführen. Sie sollte sich von allgemeinen Aussagen zum eigentlichen Thema heranarbeiten (hineinzoomen). Die Einleitung sollte so geschrieben werden, dass jeder Informatiker (auch aus anderen Teilbereichen der Informatik) verstehen kann wozu die Arbeit dient. Idealerweise folgt die Einleitung dem gleichen Aufbau (5 Punkte) wie der Abstract, jedoch wird jetzt für jeden der Punkte ein ganzer Abschnitt geschrieben. Der vorletzte Absatz der Einleitung (also nach Abhandlung der 5 Punkte) sollte die Beiträge (Contributions) der bearbeiteten Werke nochmals deutlich herausstellen. Das erleichtert es Lesern, im Wust von Motivation, verwandten Arbeiten, Grundlagen usw. das Inkrement bzw. den wissenschaftlichen Beitrag der Arbeiten zu erfassen.
-
-Im Allgemeinen schließt die Einleitung am Ende mit einer Mini-Zusammen\-fassung der Struktur der Seminararbeit ab. Beispiel, im Bezug auf diesen Beipieltext (rekursives Beispiel!): Section~\ref{seq:content} contains details on the content beyond the Introduction. Finally, Section~\ref{seq:conclusion} concludes this paper.
-
-\section{Content}
-\label{seq:content}
-
-Der Inhalt hängt stark von dem Thema der Arbeit ab und kann daher unterschiedlich strukturiert sein. Folgend sind potentielle Sections, die oft, aber nicht immer nützlich sind, aufgelistet. Einige dieser Abschnitte können sich gegenseitig ausschließen:
 \begin{itemize}
-	\item Foundations: Grundlagen, die zum Verständnis der Arbeiten notwendig sind.
-	\item Approach(es): Die Ansätze, die in den Arbeiten verwendet werden.
-	\item Evaluation: Wie wurden die Arbeiten evaluiert/validiert?
-	\item Comparison: Ein Vergleich der verschiedenen Ansätze / Evaluationen / Ergebnisse.
-	\item Discussion: Wie Evaluation oder Comparison, aber stärkerer Fokus auf der Bewertung der Arbeiten.
+	\item Konfigurationsidentifizierung
+	\item Konfigurationsüberwachung
+	\item Konfigurationsbuchführung
+	\item Konfigurationsauditierung''~\cite{ISO10007}.
 \end{itemize}
 
-\subsection{Technische Hinweise und Beispiele}
+\subsection{Konfigurationsidentifizierung}
+Bei der Konfigurationsidentifizierung geht es darum sog.
+{\em Konfigurationseinheiten} festzulegen und zu beschreiben. Eine
+Konfigurationseinheit kann dabei eine beliebige Kombination von Hardware,
+Software und Dienstleistung sein. Für diese Einheiten werden in
+Konfigurationsdokumenten die physischen und funktionellen Merkmale festgehalten.
+Weiterhin wird bei der Konfigurationsidentifizierung festgelegt, nach welchen
+Regeln bestimmte Artefakte nummeriert werden. Hier können Artefakte z. B.
+Konfigurationseinheiten, ihre Teile und Zusammenstellungen von Dokumenten,
+Schnittstellen und Änderungen sein. Außerdem werden sog.
+{\em Bezugskonfigurationen} definiert. Diese sind mitsamt ihren Änderungen als
+aktuell gültige Konfigurationen zu verstehen~\cite[S. 6f]{weischedel2002}.
 
-\textbf{Wichtiger Hinweis}: Der \emph{ngerman babel} import zu Beginn der .tex Datei ist bei englischsprachigen Abgaben zu entfernen!
+\subsection{Konfigurationsüberwachung}
+Die Konfigurationsüberwachung behandelt die Überwachung von Änderungen. Dabei
+wird gefordert, dass alle Änderungen dokumentiert und begründet werden.
+Zusätzlich sollten die Auswirkungen der Änderungen beurteilt werden. Auf Basis
+dieser Beurteilungen sollen Änderungen genehmigt oder abgelehnt
+werden~\cite[S. 7]{weischedel2002}.
 
-Formeln können inline verwendet werden, wie diese hier: $\forall i \in B : |y_{i+1} - y_i| < |y_{j+1} - y_j|$. Solche Formeln sind aber aus dem weiteren Text heraus schwer zu referenzieren. Es kann sich manchmal also anbieten, Formeln im \emph{equation} Environment zu schreiben (s Eq.~\ref{eq:example}).
+\subsection{Konfigurationsbuchführung}
+Die Tätigkeit Konfigurationsbuchführung sorgt für eine Rückverfolgbarkeit von
+Änderungen. Damit soll es möglich sein, alle Änderungen zur letzten
+Bezugskonfiguration nachvollziehen zu können. Aus der
+Konfigurationsidentifizierung und der Konfigurationsüberwachung resultieren
+die für die Buchführung notwendigen Aufzeichnungen als
+Nebenprodukte~\cite[S. 7]{weischedel2002}.
 
-\vspace{-6mm}
-\begin{center}
-	\begin{equation}
-	f(x) = \frac{\sum_{i=1}^{n} w_i(x) f(x_i)}{\sum_{i=1}^{n} w_i(x)}
-	\label{eq:example}
-	\end{equation}
-	with $w_i(x) = \frac{1}{|x - x_i|^p}$.
-\end{center}
+\subsection{Konfigurationsauditierung}
+Die Konfigurationsauditierung lässt sich in zwei Tätigkeiten aufteilen.
 
-Eq.~\ref{eq:example} nutzt eine Formel im \emph{equation} Environment, welche zusätzlich etwas zentrierten Text mit einer Inline-Formel enthält. Der \emph{vspace} Befehl wird im Beispiel verwendet, um die Formel etwas nach oben zu rücken und Platz zu sparen. Die folgende Formel (Eq.~\ref{eq:matrix}) benutzt diesen Trick nicht, hat aber eine schöne Matrix:
-\begin{equation}
-\begin{pmatrix}
-x_0^n & x_0^{n-1} & \cdots & x_0^0 \\
-x_1^n & x_1^{n-1} & \cdots & x_1^0 \\
-\vdots & \vdots & \ddots & \vdots \\
-x_n^n & x_n^{n-1} & \cdots & x_n^0
-\end{pmatrix}
-\begin{pmatrix}
-a_n \\
-a_{n-q} \\
-\vdots\\
-a_0
-\end{pmatrix}
-=
-\begin{pmatrix}
-f(x_0) \\
-f(x_1) \\
-\vdots\\
-f(x_n)
-\end{pmatrix}
-\label{eq:matrix}
-\end{equation}
+Durch das sog. {\em funktionsbezogene Konfigurationsaudit} wird gewährleistet,
+dass das Erzeugnis den vertraglich spezifizierten Anforderungen entspricht.
+D. h. die Konfigurationseinheit muss alle Leistungen und funktionellen Merkmalen
+erreichen, die zuvor in den Konfigurationsdokumenten festgelegt wurden.
 
-Figuren, wie Abb.~\ref{fig:example}, werden im \emph{figure}-Environment eingebunden. Dort werden die Grafiken selbst mit dem \emph{includegraphics}-Befehl importiert. Dabei sind Vektorgrafiken Pixelgrafiken vorzuziehen. \emph{figure} und \emph{includegraphics} haben sehr viele Möglichkeiten die importierten Grafiken zu platzieren, zu dehnen und zu beschneiden. Die Beispielgrafik ist so konfiguriert, dass sie an der Oberseite einer neuen Seite platziert werden soll (Achtung: LaTeX ist da nicht immer 100\% zuverlässig), 8,4 cm breit sein soll (Höhe ergibt sich aus dem Seitenverhältnis) und an der Oberseite 1 cm der Grafik abschneiden soll. Die Grafik stammt aus einer anderen Veröffentlichung und wird dementsprechend korrekt mit dem \emph{cite}-Befehl in der Bildunterschrift zitiert.
+Das sog. {\em physische Konfigurationsaudit} prüft, ob eine aktuelle
+Konfiguration einer Konfigurationseinheit mit den Konfigurationsdokumenten
+übereinstimmt. Damit soll sichergestellt werden, dass die Dokumente und die
+Erzeugnisse nicht voneinander abweichen gehen. Ansonsten könnte passieren, dass
+ein Erzeugnis letztendlich nichts mehr mit seiner Dokumentation zu tun
+hat~\cite[S. 7]{weischedel2002}.
 
-\begin{figure}[t]
-%\vspace{-2mm}
-\begin{center}
-\includegraphics[trim=0cm 0cm 0cm 1cm, clip=true,width = 8.4cm]{graphics/RHEL6_4_E5-2690_8x8GB_p_truex50.pdf}
-\caption{Bildunterschrift mit Zitat zur Quelle des Bildes.}
-\label{fig:example}
-\end{center}
-%\vspace{-5mm}
-\end{figure}
+\subsection{Konfigurationsmanagementplan}
+Der Konfigurationsmanagementprozess sollte in einem
+{\em Konfigurationsmanagementplan} dokumentiert sein. Darin sollte für jedes
+Projekt stehen welche Konfigurationsmanagementverfahren durchzuführen sind. Zu
+jedem Verfahren soll im Plan festgelegt sein wer sie durchführt und wann sie
+ausgeführt werden sollen~\cite[S. 7f]{weischedel2002}.
 
-Im folgenden noch eine schöne Beispieltabelle (Tabelle~\ref{tab:example}):
+TODO: "Ein Beispiel für einen Konfigurationsmanagementplan ist in X zu sehen"
 
-\begin{table*}[htbp]%
-	%\small
-	\centering
-	%\vspace{-1mm}
+\section{Konfigurationsmanagement für Softwareentwicklung}
+- allgemeines über die Anwendung von dem Zeug oben auf Softwareentwicklung
 
-	\begin{tabular}{| P{2.8cm} | c :  c : c : c |}
-		\hline
-		\textbf{Model}        &          \textbf{Column 1}          &          \textbf{Column 2}          &          \textbf{Column 3}          &        \textbf{Column 3}        \\
-		\hline
-		Description 1          &              0.18\%              &             0.185\%              &             \textbf{0.149\%}              &             0.144\%              \\
-		\hdashline
-		Description 2 &              \textbf{0.09\%}              &             \textbf{0.143\%}              &             0.205\%              &             0.154\%              \\
-		\hdashline
-		Description 3    &              0.18\%              &             0.185\%              &             \textbf{0.149\%}              &             0.144\%              \\
-		\hdashline
-		Description 4    &             0.151\%              &             0.182\%              &             0.194\%              &             \textbf{0.127\%}              \\
-		\hdashline
-		Description 1    &             0.171\%              &             \textbf{0.143\%}              &             0.279\%              &             0.186\%              \\
-		\hline
-		Description 5  &             0.186\%              &             0.185\%              &             0.267\%              &             0.128\%              \\
-		\hline
-	\end{tabular}
-	\caption{Caption}
-	%\vspace{-5mm}
-	\label{tab:example}
-\end{table*}
+\section{Beispiel}
+- Anwendung von expliziten Softwaretools auf ein Projekt
 
-
-
-\section{Conclusions}
-\label{seq:conclusion}
-Die Schlussfolgerungen beenden den Artikel und erhöhen den Abstraktionsgrad der Beschreibung wieder (hinauszoomen), genauso wie die Einleitung diesen gesenkt hat (hineinzoomen). Meist sind ``Conclusions'' sehr wichtig, da viele Gutachter nach ``Abstract'' und ``Introduction'' zunächst die ``Conclusions'' lesen und dann voreingenommen den Rest des Artikels lesen. Idealerweise bestehen die ``Conclusions'' aus den folgenden 3 Punkten, für die jeweils ein Abschnitt spendiert werden sollte:
-\begin{enumerate}
-	\item Zusammenfassung: Was wurde in dieser Arbeit gemacht? Was waren die Schlüsselergebnisse? Diesmal jedoch zusammengefasst nochmals für einen Leser, der die vorherigen Seiten mit allen Details bereits gelesen hat.
-	\item Adressaten der Verbesserung: Wem nützen die Verbesserungen/Beiträge der Arbeit? Inwieweit wird die Software-Technik (oder Informatik als Ganzes) durch die Arbeit verbessert?
-	\item Aufbauende/Zukünftige Arbeiten: Welche nächsten Schritte sind geplant (erst kurzfristige, dann längerfristige)? Welche möglichen Lösungsansätze für noch bestehende Probleme sind denkbar? Wie könnten zukünftige Forschungsarbeiten aussehen?
-\end{enumerate}
+\section{Fazit}
+- alles cool
 
 %\newpage
 \bibliographystyle{splncs03}

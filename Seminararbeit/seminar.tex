@@ -36,7 +36,7 @@
   \texttt{maximilian.stock@stud-mail.uni-wuerzburg.de}\\
   \and\\
   Michael Steininger\\
-  \texttt{michael.steininger@stud-mai.uni-wuerzburg.de}
+  \texttt{michael.steininger@stud-mail.uni-wuerzburg.de}
 }
 %
 %\authorrunning{Maximilian Stock}
@@ -62,10 +62,10 @@ Würzburg\\
 \section{Einführung}
 Ursprünglich ist die Idee des Konfigurationsmanagements im US-Militär
 entstanden. Dort wurden in den 1950er Jahren Versuche mit Flugkörpern gemacht,
-die in verschiedenen Konfigurationen gebaut und getestet worden sind. Eine
-Vielzahl der Flugkörper sind nicht wie vorgesehen im Ziel explodiert sondern
+die in verschiedenen Konfigurationen gebaut und getestet wurden. Eine
+Vielzahl der Flugkörper explodierten nicht wie vorgesehen im Ziel, sondern
 meist zuvor. Es war allerdings nicht möglich die fehlerhaften Flugkörper nach
-den Tests zu untersuchen, weil sie zerstört worden sind. Zusätzlich waren die
+den Tests zu untersuchen, weil sie zerstört wurden. Zusätzlich waren die
 Aufzeichnungen über die Konfigurationen der einzelnen Flugkörper nicht
 ausreichend. Dadurch war es nicht möglich festzustellen welche Änderungen zu
 welchen Testausgängen führten. Aus diesen Erfahrungen enstanden
@@ -174,7 +174,31 @@ ausgeführt werden sollen~\cite[S. 7f]{weischedel2002}.
 TODO: "Ein Beispiel für einen Konfigurationsmanagementplan ist in X zu sehen"
 
 \section{Konfigurationsmanagement für Softwareentwicklung}
-- allgemeines über die Anwendung von dem Zeug oben auf Softwareentwicklung
+
+% sources
+% https://en.wikipedia.org/wiki/Comparison_of_open-source_configuration_management_software
+% https://en.wikipedia.org/wiki/Software_configuration_management
+
+Konfigurationsmanagement lässt sich ebenfalls in der Softwareentwicklung
+unter der Bezeichnung {\em software configuration management} (kurz SCM)
+finden. Allgemein versteht man darunter Aktivitäten die zur Aufzeichnung und
+Überprüfung von Änderungen in Softwareprojekten dienen. Dazu zählen unter
+anderem Versionskontrolle und das Definieren von sogenannten {\em baselines}.
+Baselines stellen hierbei klar definierte Zwischenstände eines Produkts dar, die
+anhand der Attribute des Produkts unterschieden werden können. Ein
+Entwicklungsschritt zwischen Baselines wird hierbei als {\em change} bezeichnet.
+SCM ermöglicht es alle changes zu dokumentieren um festzuhalten was, wann
+und durch wen geändert wurde. Im Falle einer fehlerhaften baseline kann per
+SCM eine automatische Rückkonfiguration auf eine passendere, korrektere baseline
+durchgeführt werden.
+
+% cite  Roger S. Pressman (2009). Software Engineering: A Practitioner's Approach (7th International ed.). New York: McGraw-Hill.
+
+\subsection{Build Management}
+\subsection{Process Management}
+\subsection{Environment Management}
+\subsection{Teamwork???}
+\subsection{Defect Tracking}
 
 \section{Beispiel}
 - Anwendung von expliziten Softwaretools auf ein Projekt

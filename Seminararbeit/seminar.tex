@@ -79,10 +79,6 @@ Konfigurationsmanagement eingegangen. D. h. das Konfigurationsmanagement wird
 definiert und erklärt.
 Das zweite Kapitel erläutert wie man das allgemeine Konfigurationsmanagement in
 der Softwareentwicklung anwendet.
-In Kapitel drei wird das Konfigurationsmanagement an einem beispielhaften
-Softwareprojekt in der Praxis gezeigt.
-
-TODO: AUFBAU DER ARBEIT VOR ABGABE NOCHMAL ÜBERPRÜFEN OB ES NOCH PASST!!!!
 
 \section{Grundlagen des Konfigurationsmanagement}
 Im Folgenden wird Konfigurationsmanagement nach DIN EN ISO 10007 definiert und
@@ -165,9 +161,9 @@ Projekt stehen welche Konfigurationsmanagementverfahren durchzuführen sind. Zu
 jedem Verfahren soll im Plan festgelegt sein wer sie durchführt und wann sie
 ausgeführt werden sollen~\cite[S. 7f]{weischedel2002}.
 
-TODO: "Ein Beispiel für einen Konfigurationsmanagementplan ist in X zu sehen"
+% TODO: "Ein Beispiel für einen Konfigurationsmanagementplan ist in X zu sehen"
 
-\section{Konfigurationsmanagement für Softwareentwicklung}
+\section{Konfigurationsmanagement in der Softwareentwicklung}
 
 Konfigurationsmanagement lässt sich ebenfalls in der Softwareentwicklung
 unter der Bezeichnung {\em software configuration management} (kurz SCM)
@@ -183,14 +179,14 @@ drei Kategorien gehören:
   to it).
 \end{quote}
 
-Zur zweiten Kategorie zählen hierbei z. B. jegliche Dokumente die das Softwaresystem
+Zur zweiten Kategorie zählen z. B. jegliche Dokumente die das Softwaresystem
 spezifizieren (Anforderungsdokument, Architekturdokument, Testspezifikationen, etc.).
 Mit der dritten Kategorie sind zusätzliche Inhalte gemeint, die zu einem gewissen
 Grad mit der Software zu tun haben. Beispiele hierfür sind Konfigurationsdateien
 für das korrekte Ausführen der Software auf dem Zielsystem, Konfigurationen für
 verwendete Test-/Build-/Deploysoftware, Compiler in bestimmten Versionen, etc.
 Systembestandteile die in eine dieser Kategorien fallen heißen
-{\em software configuration items} (kurz SCI) und bilden zusammen die eine
+{\em software configuration items} (kurz SCI) und bilden zusammen eine
 {\em software configuration} (kurz SC).
 
 Im Prozess der Softwareentwicklung enstehen zwangsläufig gänzlich neue SCIs oder
@@ -207,28 +203,23 @@ der Regel durch folgende Gründe:
 	\item Zeitliche oder finanzielle Planung erfordert Neuplanung des Projekts
 \end{itemize}
 
+\subsection{Baselines}
+Da im Kontext des SCM und der enstehenden SCIs der Begriff der baselines auftritt,
+wird er im Folgenden definiert.
+Innerhalb des Lebenszyklus eines Projektes werden sogenannte {\em baselines}
+verwendet, um konkrete Softwarekonfigurationen in Meilensteinen festzuhalten.
+Die IEEE definiert den Begriff folgendermaßen \cite[p. 588]{Pressman:2009:SEP:1593949}:
 
+\begin{quote}
+  A specification or product that has been formally reviewed and agreed upon,
+  that thereafter serves as the basis for further development, and that can be
+  changed only through formal change control procedures.
+\end{quote}
 
-
-
-% IRRELEVANT?!
-% \subsection{Baselines}
-% Da im Kontext des SCM und der enstehenden SCIs der Begriff der baselines auftritt,
-% wird er im Folgenden definiert.
-% Innerhalb des Lebenszyklus eines Projektes werden sogenannte {\em baselines}
-% verwendet, um konkrete Softwarekonfigurationen in Meilensteinen festzuhalten.
-% Die IEEE definiert den Begriff folgendermaßen \cite[p. 588]{Pressman:2009:SEP:1593949}:
-%
-% \begin{quote}
-%   A specification or product that has been formally reviewed and agreed upon,
-%   that thereafter serves as the basis for further development, and that can be
-%   changed only through formal change control procedures.
-% \end{quote}
-%
-% Damit ist eine baseline ein konkreter Stand aller SCIs, der formal anerkannt
-% wird um diesen hervorzuheben. Dies kann z. B. der Fall sein, sobald eine bestimmte
-% Funktionalität durch das Produkt angeboten wird. Durch die Einführung von baselines
-% können Fortschritte besser festgehalten werden.
+Damit ist eine baseline ein konkreter Stand aller SCIs, der formal anerkannt
+wird um diesen hervorzuheben. Dies kann z. B. der Fall sein, sobald eine bestimmte
+Funktionalität durch das Produkt angeboten wird. Durch die Einführung von baselines
+können Fortschritte besser festgehalten werden.
 
 \subsection{SCM Repository}
 Unter einem {\em SCM repository} versteht man eine Menge von Mechanismen und
@@ -252,8 +243,11 @@ zeigt welche Inhalte in der Regel in einem SCM-Repository enthalten sind.
 \end{figure}
 
 \subsection{SCM Repository Features}
-Ein SCM-Repository muss bestimmte Funktionalitäten unterstützen, um SCM
+\label{sec:scm_repo_features}
+Ein SCM-Repository sollte bestimmte Funktionalitäten unterstützen, um SCM
 zu ermöglichen. Im Folgenden werden diese kurz vorgestellt.
+Es ist dabei zu beachten, dass nicht alle angesprochenen Funktionalitäten
+in jeder SCM-Software vorhanden ist.
 
 \subsubsection{Version Control}
 Im Verlauf eines Projekts entstehen viele verschiedene Versionen der einzelnen
@@ -282,14 +276,14 @@ zu gewährleisten
 \subsubsection{Requirements Tracing}
 Damit ist die Nachverfolgung von Anforderungen in zwei Richtungen gemeint.
 Zum einen möchte man wissen, welche SCIs aus einer gegebenen Anforderung
-entstanden sind ({\em forward tracing}). Zum anderen kann nachvollzogen werden,
+entstanden sind ({\em forward tracing}). Zum anderen kann nachvollzogen werden
 welche Anforderung(en) für das Entstehen eines gegebenen SCI verantwortlich sind
 ({\em backward tracing})
 \cite[p. 592]{Pressman:2009:SEP:1593949}.
 
 \subsubsection{Configuration Management}
 Hiermit ist die Verwaltung von Meilensteinen als Gesamtprodukt einzelner SCIs
-gemeint. Dies kann z. B. eine Baseline oder ein produktionsreifes Release sein
+gemeint. Dies kann z. B. eine Baseline oder ein produktionsreifer Releasestand sein
 \cite[p. 592]{Pressman:2009:SEP:1593949}.
 
 \subsubsection{Audit Trails}
@@ -299,11 +293,19 @@ vollzogen hat. Durch diese zusätzlichen Metainformationen ist es einfacher
 Änderungen transparenter zu machen und zu einem späteren Zeitpunkt nachzuvollziehen
 \cite[p. 592]{Pressman:2009:SEP:1593949}.
 
-\section{Beispiel}
-- Anwendung von expliziten Softwaretools auf ein Projekt
+% \section{Softwarebeispiele für SCM}
+% Im SCM-Bereich existiert eine große Zahl an Softwarelösungen. Zu den kommerziellen
+% Produkten zählen unter anderem IBM Rational Synergy und BitKeeper. Open Source
+% Lösungen umfassen Trac, Redmine und OpenProject.
+% OpenProject bietet Funktionen für die zeitliche Projektplanung,
+
 
 \section{Fazit}
-- alles cool
+In der Softwareentwicklung ist man ständig dazu gezwungen, Änderungen an
+bestehender Software vorzunehmen, da sich Anforderungen
+und Projektbedinungen häufig ändern. SCM versucht diesem Umstand möglichst
+effektiv umzugehen. Durch die in Kapitel \ref{sec:scm_repo_features} vorgestellten
+Funktionalitäten, können Softwareprojekte einfacher durchgeführt werden.
 
 %\newpage
 \bibliographystyle{splncs03}

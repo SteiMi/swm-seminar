@@ -6,7 +6,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
-\usepackage{amsmath}
+%\usepackage{amsmath}
 \setcounter{tocdepth}{3}
 \usepackage{graphicx}
 \usepackage{array}
@@ -14,32 +14,29 @@
 \usepackage{arydshln}
 \newcolumntype{P}[1]{>{\RaggedRight\hspace{0pt}}p{#1}}
 %\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
-
-
 \usepackage{url}
 \urldef{\mailsa}\path|maximilian.stock@stud-mail.uni-wuerzburg.de|
-\newcommand{\keywords}[1]{\par\addvspace\baselineskip
-\noindent\keywordname\enspace\ignorespaces#1}
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip\noindent\keywordname\enspace\ignorespaces#1}
 
 \begin{document}
 
 \mainmatter
 
 % first the title is needed
-\title{Konfigurationsmanagementstrategien und Tools in der SW Entwicklung:\\ Überblick und Beispiel}
+\title{Konfigurationsmanagementstrategien und Tools in der SW-Entwicklung:\\ Überblick und Beispiel}
 
 % a short form should be given in case it is too long for the running head
 \titlerunning{Konfigurationsmanagementstrategien und Tools}
 
-\author{
-  Maximilian Stock\\
-  \texttt{maximilian.stock@stud-mail.uni-wuerzburg.de}\\
-  \and\\
-  Michael Steininger\\
-  \texttt{michael.steininger@stud-mail.uni-wuerzburg.de}
-}
-%
-%\authorrunning{Maximilian Stock}
+\author{Maximilian Stock und Michael Steininger}
+
+% \authorrunning{
+%   Maximilian Stock\\
+%   \texttt{maximilian.stock@stud-mail.uni-wuerzburg.de}\\
+%   \and\\
+%   Michael Steininger\\
+%   \texttt{michael.steininger@stud-mail.uni-wuerzburg.de}
+% }
 % (feature abused for this document to repeat the title also on left hand pages)
 
 % the affiliations are given next
@@ -48,9 +45,6 @@ Würzburg\\
 %\mailsa\\
 }
 
-
-% \toctitle{Interpolation based Modelling of Power and Performance}
-% \tocauthor{J. von Kistowski and S. Kounevs}
 \maketitle
 
 
@@ -85,10 +79,6 @@ Konfigurationsmanagement eingegangen. D. h. das Konfigurationsmanagement wird
 definiert und erklärt.
 Das zweite Kapitel erläutert wie man das allgemeine Konfigurationsmanagement in
 der Softwareentwicklung anwendet.
-In Kapitel drei wird das Konfigurationsmanagement an einem beispielhaften
-Softwareprojekt in der Praxis gezeigt.
-
-TODO: AUFBAU DER ARBEIT VOR ABGABE NOCHMAL ÜBERPRÜFEN OB ES NOCH PASST!!!!
 
 \section{Grundlagen des Konfigurationsmanagement}
 Im Folgenden wird Konfigurationsmanagement nach DIN EN ISO 10007 definiert und
@@ -160,7 +150,7 @@ erreichen, die zuvor in den Konfigurationsdokumenten festgelegt wurden.
 Das sog. {\em physische Konfigurationsaudit} prüft, ob eine aktuelle
 Konfiguration einer Konfigurationseinheit mit den Konfigurationsdokumenten
 übereinstimmt. Damit soll sichergestellt werden, dass die Dokumente und die
-Erzeugnisse nicht voneinander abweichen gehen. Ansonsten könnte passieren, dass
+Erzeugnisse nicht voneinander abweichen. Ansonsten könnte passieren, dass
 ein Erzeugnis letztendlich nichts mehr mit seiner Dokumentation zu tun
 hat~\cite[S. 7]{weischedel2002}.
 
@@ -171,40 +161,151 @@ Projekt stehen welche Konfigurationsmanagementverfahren durchzuführen sind. Zu
 jedem Verfahren soll im Plan festgelegt sein wer sie durchführt und wann sie
 ausgeführt werden sollen~\cite[S. 7f]{weischedel2002}.
 
-TODO: "Ein Beispiel für einen Konfigurationsmanagementplan ist in X zu sehen"
+% TODO: "Ein Beispiel für einen Konfigurationsmanagementplan ist in X zu sehen"
 
-\section{Konfigurationsmanagement für Softwareentwicklung}
-
-% sources
-% https://en.wikipedia.org/wiki/Comparison_of_open-source_configuration_management_software
-% https://en.wikipedia.org/wiki/Software_configuration_management
+\section{Konfigurationsmanagement in der Softwareentwicklung}
 
 Konfigurationsmanagement lässt sich ebenfalls in der Softwareentwicklung
 unter der Bezeichnung {\em software configuration management} (kurz SCM)
-finden. Allgemein versteht man darunter Aktivitäten die zur Aufzeichnung und
-Überprüfung von Änderungen in Softwareprojekten dienen. Dazu zählen unter
-anderem Versionskontrolle und das Definieren von sogenannten {\em baselines}.
-Baselines stellen hierbei klar definierte Zwischenstände eines Produkts dar, die
-anhand der Attribute des Produkts unterschieden werden können. Ein
-Entwicklungsschritt zwischen Baselines wird hierbei als {\em change} bezeichnet.
-SCM ermöglicht es alle changes zu dokumentieren um festzuhalten was, wann
-und durch wen geändert wurde. Im Falle einer fehlerhaften baseline kann per
-SCM eine automatische Rückkonfiguration auf eine passendere, korrektere baseline
-durchgeführt werden.
+finden. Nach Pressman \cite[p. 585f]{Pressman:2009:SEP:1593949} besteht eine
+Softwarekonfiguration aus Einzelteilen, die zu mindestens einer der folgenden
+drei Kategorien gehören:
 
-% cite  Roger S. Pressman (2009). Software Engineering: A Practitioner's Approach (7th International ed.). New York: McGraw-Hill.
+\begin{quote}
+  The output of the software process is information that may be divided into three
+  broad categories: (1) computer programs (both source level and executable forms),
+  (2) work products that describe the computer programs (targeted at various
+  stakeholders), and (3) data or content (contained within the program or external
+  to it).
+\end{quote}
 
-\subsection{Build Management}
-\subsection{Process Management}
-\subsection{Environment Management}
-\subsection{Teamwork???}
-\subsection{Defect Tracking}
+Zur zweiten Kategorie zählen z. B. jegliche Dokumente die das Softwaresystem
+spezifizieren (Anforderungsdokument, Architekturdokument, Testspezifikationen, etc.).
+Mit der dritten Kategorie sind zusätzliche Inhalte gemeint, die zu einem gewissen
+Grad mit der Software zu tun haben. Beispiele hierfür sind Konfigurationsdateien
+für das korrekte Ausführen der Software auf dem Zielsystem, Konfigurationen für
+verwendete Test-/Build-/Deploysoftware, Compiler in bestimmten Versionen, etc.
+Systembestandteile die in eine dieser Kategorien fallen heißen
+{\em software configuration items} (kurz SCI) und bilden zusammen eine
+{\em software configuration} (kurz SC).
 
-\section{Beispiel}
-- Anwendung von expliziten Softwaretools auf ein Projekt
+Im Prozess der Softwareentwicklung enstehen zwangsläufig gänzlich neue SCIs oder
+Abwandlungen von bestehenden.
+Innerhalb dieses Prozesses beschreibt SCM eine Menge von Schritten um die
+Veränderungen der SCIs zu handhaben. Derartige Änderungen entstehen in
+der Regel durch folgende Gründe:
+
+\begin{itemize}
+	\item Businessregeln or Produktanforderungen ändern sich aufgrund neuer Marktbedingungen
+	\item Stakeholder fordert Modifikationen am System um zusätzliche Informationen/Dienste
+        oder mehr Funktionalität zu bieten
+	\item Prioritäten des Projekts oder die Struktur im Projektteam ändert sich
+	\item Zeitliche oder finanzielle Planung erfordert Neuplanung des Projekts
+\end{itemize}
+
+\subsection{Baselines}
+Da im Kontext des SCM und der enstehenden SCIs der Begriff der baselines auftritt,
+wird er im Folgenden definiert.
+Innerhalb des Lebenszyklus eines Projektes werden sogenannte {\em baselines}
+verwendet, um konkrete Softwarekonfigurationen in Meilensteinen festzuhalten.
+Die IEEE definiert den Begriff folgendermaßen \cite[p. 588]{Pressman:2009:SEP:1593949}:
+
+\begin{quote}
+  A specification or product that has been formally reviewed and agreed upon,
+  that thereafter serves as the basis for further development, and that can be
+  changed only through formal change control procedures.
+\end{quote}
+
+Damit ist eine baseline ein konkreter Stand aller SCIs, der formal anerkannt
+wird um diesen hervorzuheben. Dies kann z. B. der Fall sein, sobald eine bestimmte
+Funktionalität durch das Produkt angeboten wird. Durch die Einführung von baselines
+können Fortschritte besser festgehalten werden.
+
+\subsection{SCM Repository}
+Unter einem {\em SCM repository} versteht man eine Menge von Mechanismen und
+Datenstrukturen um auftretende Änderungen im Softwareentwicklungsprozess
+effektiv zu verwalten. Es bietet Funktionalitäten eines modernen Datenbanksystems,
+da es z. B. die Datenintegrität der zu speichernen SCIs garantieren muss.
+Außerdem stellt es einen zentralen Baustein im Entwicklungsprozess dar, unterstützt
+bei der Qualitätssicherung und bietet Integrationen für externe Softwarewerkzeuge
+\cite[p. 590f]{Pressman:2009:SEP:1593949}. Abbildung \ref{fig:scm_repository_content}
+zeigt welche Inhalte in der Regel in einem SCM-Repository enthalten sind.
+
+\begin{figure}
+%\vspace{-2mm}
+\begin{center}
+\includegraphics{graphics/scm_respository_content.png}
+\caption{Inhalte eines SCM-Repositories nach Pressman
+\cite[p. 591]{Pressman:2009:SEP:1593949}.}
+\label{fig:scm_repository_content}
+\end{center}
+%\vspace{-5mm}
+\end{figure}
+
+\subsection{SCM Repository Features}
+\label{sec:scm_repo_features}
+Ein SCM-Repository sollte bestimmte Funktionalitäten unterstützen, um SCM
+zu ermöglichen. Im Folgenden werden diese kurz vorgestellt.
+Es ist dabei zu beachten, dass nicht alle angesprochenen Funktionalitäten
+in jeder SCM-Software vorhanden ist.
+
+\subsubsection{Version Control}
+Im Verlauf eines Projekts entstehen viele verschiedene Versionen der einzelnen
+SCIs. Das Repository muss in der Lage sein all diese Zwischenstände zu archivieren,
+damit effektiv zwischen diesen gewechselt werden kann, um z. B. ältere Versionen
+für Testzwecke zu erhalten.
+Es sollte in der Lage sein viele verschiedene Datentypen verwalten
+zu können. Neben einfachem Text, Grafiken und Dokumenten auch komplexe Binärformate,
+Testdaten und -ergebnisse.
+Darüber hinaus muss es die Möglichkeit bieten aus einer Menge spezifizierter
+Versionen einzelner SCIs ein Gesamtprodukt zu erzeugen.
+Oft wird zusätzlich {\em issue} oder {\em bug tracking} angeboten, um gefundene Fehler
+mit SCIs bzw. einer bestimmten Version davon zu assoziieren
+\cite[p. 592, 595]{Pressman:2009:SEP:1593949}.
+
+\subsubsection{Dependency Tracking and Change Management}
+Neben der Verwaltung einzelner SCIs und deren Versionen sollte ein SCM-Repository
+auch für das Dokumentieren von Beziehungen zwischen SCIs und deren Versionen
+verwendbar sein. Diese Beziehungen können schlichte Assoziationen oder direkte
+Abhängigkeiten zu-/voneinander darstellen. Zum Beispiel kann nach der Änderung
+eines UML-Diagramms überprüft werden, welche davon abhängigen Dokumente
+angepasst bzw. mindestens überprüft werden müssen, um die Integrität dieser
+zu gewährleisten
+\cite[p. 592]{Pressman:2009:SEP:1593949}.
+
+\subsubsection{Requirements Tracing}
+Damit ist die Nachverfolgung von Anforderungen in zwei Richtungen gemeint.
+Zum einen möchte man wissen, welche SCIs aus einer gegebenen Anforderung
+entstanden sind ({\em forward tracing}). Zum anderen kann nachvollzogen werden
+welche Anforderung(en) für das Entstehen eines gegebenen SCI verantwortlich sind
+({\em backward tracing})
+\cite[p. 592]{Pressman:2009:SEP:1593949}.
+
+\subsubsection{Configuration Management}
+Hiermit ist die Verwaltung von Meilensteinen als Gesamtprodukt einzelner SCIs
+gemeint. Dies kann z. B. eine Baseline oder ein produktionsreifer Releasestand sein
+\cite[p. 592]{Pressman:2009:SEP:1593949}.
+
+\subsubsection{Audit Trails}
+Sogenannte {\em audit trails} enthalten weitere Informationen über eine Änderung
+an einem SCI. Dabei wird gespeichert wann, warum und wer eine bestimmte Änderung
+vollzogen hat. Durch diese zusätzlichen Metainformationen ist es einfacher
+Änderungen transparenter zu machen und zu einem späteren Zeitpunkt nachzuvollziehen
+\cite[p. 592]{Pressman:2009:SEP:1593949}.
+
+% \section{Softwarebeispiele für SCM}
+% Im SCM-Bereich existiert eine große Zahl an Softwarelösungen. Zu den kommerziellen
+% Produkten zählen unter anderem IBM Rational Synergy und BitKeeper. Open Source
+% Lösungen umfassen Trac, Redmine und OpenProject.
+% OpenProject bietet Funktionen für die zeitliche Projektplanung,
+
 
 \section{Fazit}
-- alles cool
+In der Softwareentwicklung ist man ständig dazu gezwungen, Änderungen an
+bestehender Software vorzunehmen, da sich Anforderungen
+und Projektbedinungen häufig ändern. SCM versucht diesem Umstand möglichst
+effektiv umzugehen. Durch die in Kapitel \ref{sec:scm_repo_features} vorgestellten
+Funktionalitäten, können Softwareprojekte einfacher durchgeführt werden.
 
 %\newpage
 \bibliographystyle{splncs03}
